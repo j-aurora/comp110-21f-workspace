@@ -1,4 +1,4 @@
-"""Practice using  numeric operators with multiple inputs"""
+"""Part 2: using numeric operators with multiple inputs"""
 
 __author__ = "730396458"
 

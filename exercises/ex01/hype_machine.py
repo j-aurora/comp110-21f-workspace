@@ -1,4 +1,4 @@
-"""will boost spirits"""
+"""Part 1 of ex01 for boosting."""
 
 __author__ = "730396458"
 

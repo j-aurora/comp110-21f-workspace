@@ -1,4 +1,4 @@
-"""Part 3 of EX01 to practice using relational operators."""
+"""Part 3 of EX01: practice using relational operators."""
 
 __author__ = "730396458"
 
