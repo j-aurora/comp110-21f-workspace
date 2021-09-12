@@ -23,3 +23,5 @@ else:
         print("When feeling stressed, take comfort in pets. ")
     else: 
         print("Your life is amazing, don't let one bad thing hold you back.")
+
+print("Now, go spread positive vibes! ")
