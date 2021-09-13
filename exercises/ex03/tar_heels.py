@@ -1,6 +1,18 @@
 """An exercise in remainders and boolean logic."""
 
-__author__ = "ENTER YOUR 9-DIGIT PID HERE"
+__author__ = "730396458"
 
-
-# Begin your solution here...
+divis: str = ""
+given: int = int(input("Enter an int: "))
+if (given % 2) == 0 or (given % 7) == 0:
+    if (given % 2) == 0:
+        divis = divis + "TAR "
+        if (given % 7) == 0:
+            divis = divis + "HEELS"
+        print(divis)
+    else:
+        if (given % 7) == 0:
+            divis = divis + "HEELS"
+            print(divis)
+else:
+    print("CAROLINA")
