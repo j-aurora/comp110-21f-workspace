@@ -20,7 +20,7 @@ while i < len(rolls):
     sum = sum + rolls[i]
     i = i + 1
 
-print(f"Total score: {sum}")
+print(f"Total score: ")
 
 # rolls.append(randint(1, 6))
 # rolls.append(randint(1, 6))
