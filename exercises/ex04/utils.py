@@ -3,9 +3,6 @@
 __author__ = "730396458"
 
 
-# TODO: Implement your functions here.
-
-
 def all(nums: list[int], match: int) -> bool:
     """Should return True if all values in a list match the int given."""
     i: int = len(nums) - 1
