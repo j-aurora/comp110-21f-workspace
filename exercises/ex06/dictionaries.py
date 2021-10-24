@@ -6,7 +6,7 @@ __author__ = "730396458"
 
 
 def count(start: list[str]) -> dict[str, int]:
-    """Create dictionary where value is the number of times the key appears in a list. """
+    """Create dictionary where value is the number of times the key appears in a list."""
     name_count: dict[str, int] = {}
     i: int = 0
     while i < len(start):
