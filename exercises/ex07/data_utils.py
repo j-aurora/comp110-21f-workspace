@@ -44,3 +44,15 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
         result[column] = column_values(row_table, column)
         
     return result 
+
+
+def head(data: dict[str, list[str]], limit: int) -> dict[str, list[str]]:
+    partial: dict[str, list[str]] = {}
+    section: list[str] = []
+    for key in data:
+        while len(section) < limit:
+            i: int = 0
+            section.append(data[key][i])
+            i += 1
+        partial[key] = []
+    return partial
