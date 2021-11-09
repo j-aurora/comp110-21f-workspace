@@ -51,11 +51,11 @@ def head(data: dict[str, list[str]], limit: int) -> dict[str, list[str]]:
     partial: dict[str, list[str]] = {}
     for key in data:
         partial[key] = []
-    for key in data: 
         section: list[str] = []
         while len(section) < limit:
             i: int = 0
-            section.append(data[key][i])
+            the_key: str = data[key][i]
+            section.append(the_key)
             i += 1
         partial[key] = section
     return partial
@@ -72,7 +72,10 @@ def select(para1: dict[str, list[str]], para2: list[str]) -> dict[str, list[str]
 
 def concat(first: dict[str, list[str]], second: dict[str, list[str]]) -> dict[str, list[str]]:
     combined: dict[str, list[str]] = {}
-    
+    for key in first:
+        combined[key] = first[key]
+    for key in second:
+        combined[key] = second[key]
     return combined
 
 
