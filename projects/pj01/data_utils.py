@@ -49,12 +49,9 @@ def head(data: dict[str, list[str]], limit: int) -> dict[str, list[str]]:
     partial: dict[str, list[str]] = {}
     for key in data:
         partial[key] = []
-    for key in data: 
         section: list[str] = []
         while len(section) < limit:
-            i: int = 0
-            section.append(data[key][i])
-            i += 1
+            section += data[key]
         partial[key] = section
     return partial
 

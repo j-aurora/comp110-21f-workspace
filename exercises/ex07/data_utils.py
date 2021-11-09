@@ -53,10 +53,7 @@ def head(data: dict[str, list[str]], limit: int) -> dict[str, list[str]]:
         partial[key] = []
         section: list[str] = []
         while len(section) < limit:
-            i: int = 0
-            the_key: str = data[key][i]
-            section.append(the_key)
-            i += 1
+            section += data[key]
         partial[key] = section
     return partial
 
@@ -71,11 +68,15 @@ def select(para1: dict[str, list[str]], para2: list[str]) -> dict[str, list[str]
 
 
 def concat(first: dict[str, list[str]], second: dict[str, list[str]]) -> dict[str, list[str]]:
+    """This combines the data from two dictionaries into one."""
     combined: dict[str, list[str]] = {}
     for key in first:
         combined[key] = first[key]
     for key in second:
-        combined[key] = second[key]
+        if key in first:
+            combined[key] += second[key]
+        else:
+            combined[key] = second[key]
     return combined
 
 
