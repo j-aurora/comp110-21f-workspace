@@ -2,8 +2,6 @@
 
 __author__ = "730396458"
 
-# Define your function.
-
 from csv import DictReader
 
 
@@ -70,17 +68,57 @@ def select(para1: dict[str, list[str]], para2: list[str]) -> dict[str, list[str]
     return to_return
 
 
-def concat(first: dict[str, list[str]], second: dict[str, list[str]]) -> dict[str, list[str]]:
-    combined: dict[str, list[str]] = {}
-    
-    return combined
+def difficulty(numbers: list[str]) -> list[str]:
+    """Convert str objects of ratings into int objects and categorize as 'easy' or 'difficult'."""
+    ratings: list[int] = []
+    i: int = 0
+    while i < len(numbers):
+        ratings.append(int(numbers[i]))
+        i += 1
+    diff_rate: list[str] = []
+    d: int = 0
+    while d < len(ratings):
+        if ratings[d] < 4:
+            diff_rate.append('easy')
+        else:
+            diff_rate.append('difficult')
+        d += 1
+
+    return diff_rate
+
+
+def sort_experience(all_exp: list[str]) -> list[str]:
+    """Categorize experience levels."""
+    diff_rate: list[str] = []
+    d: int = 0
+    while d < len(all_exp):
+        if all_exp[d] == "7-12 months" or all_exp[d] == "1-2 years" or all_exp[d] == "Over 2 years":
+            diff_rate.append('more')
+        else:
+            diff_rate.append('little')
+        d += 1
+
+    return diff_rate
 
 
 def count(par: list[str]) -> dict[str, int]:
-    """Count the number of times something appears in a list."""
+    """Count how many times a thing appears in a list."""
     the_count: dict[str, int] = {}
     for item in par:
+        the_count[item] = 1
+    for item in par: 
         if item in the_count:
             the_count[item] += 1
 
     return the_count
+
+
+def bar_graph(numbs: list[str], categories: list[str]) -> list[str]:
+    """Make a new list of ratings that are also categorized as 'easy'."""
+    new_set: list[str] = []
+    i: int = 0
+    while i < len(numbs):
+        if categories[i] == "more":
+            new_set.append(numbs[i])
+        i += 1
+    return new_set
