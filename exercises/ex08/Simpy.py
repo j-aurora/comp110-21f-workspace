@@ -13,6 +13,10 @@ class Simpy:
     def __init__(self, values: list[float]):
         """Initialization of attributes."""
         self.values = values
+    
+    def __repr__(self) -> str:
+        """Produce a str representation of Simpy for Python."""
+        return f"Simpy({self.values})"
 
     def __str__(self) -> str:
         """Convert values into a str representation."""
