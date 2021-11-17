@@ -77,3 +77,36 @@ class Simpy:
                 result.values.append(self.values[i] ** rhs.values[i])
                 i += 1
         return result
+
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Produce a mask for Simpy."""
+        result: list[bool] = []
+        if isinstance(rhs, float):
+            for value in self.values:
+                result.append(self.values == rhs)
+        else:
+            assert len(self.values) == len(rhs.values)
+            i: int = 0
+            while i < len(self.values):
+                result.append(self.values[i] == rhs.values[i])
+                i += 1
+        return result
+
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Uses a greater than relationship between Simpys."""
+        result: list[bool] = []
+        if isinstance(rhs, float):
+            for value in self.values:
+                result.append(self.values > rhs)
+        else:
+            assert len(self.values) > len(rhs.values)
+            i: int = 0
+            while i < len(self.values):
+                result.append(self.values[i] > rhs.values[i])
+                i += 1
+        return result
+
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Can filter through Simpy using subscription notation."""
+        result: float = 0.0
+        return result
